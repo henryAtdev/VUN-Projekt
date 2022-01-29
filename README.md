@@ -1,4 +1,4 @@
-# Sticker Knight Platformer
+# Sticker Knight Platformer for VUN
 
 This is a demo project for the Corona SDK utilizing module-based game development. It includes free-to-use modules for common game functions including:
 
