@@ -1,16 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\AndroidResources\\res",
-    "\\AndroidResources\\res\\mipmap-mdpi",
-    "\\AndroidResources\\res\\mipmap-xhdpi",
-    "\\com",
-    "\\com\\ponywolf",
-    "\\scene",
-    "\\scene\\menu",
-    "\\scene\\menu\\font",
-    "\\scene\\menu\\sfx"
+    ""
   ],
-  "SelectedNode": "\\com\\ponywolf\\vjoy.lua",
   "PreviewInSolutionExplorer": false
 }

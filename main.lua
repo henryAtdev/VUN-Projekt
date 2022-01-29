@@ -1,81 +1,57 @@
---[[
+display.setStatusBar(display.HiddenStatusBar)
 
-This is the main.lua file. It executes first and, in this demo,
-its sole purpose is to set some initial visual settings.
+local centerX = display.contentCenterX
+local centerY = display.contentCenterY
 
-Then, you execute the game or menu scene via Composer.
-Composer is the official scene (screen) creation and management
-library in Corona; it provides developers with an
-easy way to create and transition between individual scenes.
+-- set up forward references
+local gameTitle
+local scoreTxt
+-- preload audio
 
-See the Composer Library guide for details:
-https://docs.coronalabs.com/guide/system/composer/index.html
 
---]]
+-- create play screen
 
--- Include the Composer library
-local composer = require( "composer" )
-
--- Removes status bar on iOS
--- https://docs.coronalabs.com/api/library/display/setStatusBar.html
-display.setStatusBar( display.HiddenStatusBar ) 
-
--- Removes bottom bar on Android 
-if system.getInfo( "androidApiLevel" ) and system.getInfo( "androidApiLevel" ) < 19 then
-	native.setProperty( "androidSystemUiVisibility", "lowProfile" )
-else
-	native.setProperty( "androidSystemUiVisibility", "immersiveSticky" ) 
-end
-
--- Are we running on the Corona Simulator?
--- https://docs.coronalabs.com/api/library/system/getInfo.html
-local isSimulator = "simulator" == system.getInfo( "environment" )
-local isMobile = ( "ios" == system.getInfo("platform") ) or ( "android" == system.getInfo("platform") )
-
--- If we are running in the Corona Simulator, enable debugging keys
--- "F" key shows a visual monitor of our frame rate and memory usage
-if isSimulator then 
-
-	-- Show FPS
-	local visualMonitor = require( "com.ponywolf.visualMonitor" )
-	local visMon = visualMonitor:new()
-	visMon.isVisible = false
-
-	local function debugKeys( event )
-		local phase = event.phase
-		local key = event.keyName
-		if phase == "up" then
-			if key == "f" then
-				visMon.isVisible = not visMon.isVisible 
-			end
-		end
+local function createPlayScreen()													
+	local background = display.newImage("background.jpg")	
+	background:scale(0.5, 0.5)
+	background.y = centerY			
+	background.alpha = 0		 
+	
+	character = display.newImage("man.png")
+	character:scale(1, 1)		--evt. verübergehend
+	character.x = centerX
+	character.y = display.contentHeight + 60
+	character.alpha = 0
+	
+	transition.to( background, { time=2000, alpha=1,  y=centerY, x=centerX } )		
+	
+	local function showTitle()
+		gameTitle = display.newImage("gametitle.png")
+		gameTitle.alpha = 0
+		gameTitle:scale(4, 4)
+		transition.to( gameTitle, {time=500, alpha=1, xScale=1, yScale=1, y=centerY-125, x=centerX} )
+		startGame()
 	end
-	-- Listen for key events in Runtime
-	-- See the "key" event documentation for more details:
-	-- https://docs.coronalabs.com/api/event/key/index.html
-	Runtime:addEventListener( "key", debugKeys )
+	transition.to( character, { time=2000, alpha=1, y=centerY+77, x=centerX+25, onComplete=showTitle, xScale=0.25, yScale=0.25 } ) 
+	end	
+
+-- game functions
+function startGame()
+	local text = display.newText( "Hier tippen zum starten. Beantworte die Fragen!", 0, 0, "Helvetica", 25 )			--Text anzeigen lassen
+	text.x = centerX																						--wo im Bildschirm anzeigen lassen? 
+	text.y = display.contentHeight - 30
+	text:setTextColor(1, 1, 1)																			--farbe für text 
+	local function goAway(event)																			--funktion um "vorbereitungs screen" wegzuzmachen und zu beginnen
+		display.remove(event.target)
+		display.remove(character)
+		display.remove(background)
+		display.remove(gameTitle)
+		spawnWorld()
+	end
+	text:addEventListener ( "tap", goAway )
 end
 
--- This module turns gamepad axis events and mobile accelerometer events into keyboard
--- events so we don't have to write separate code for joystick, tilt, and keyboard control
-require( "com.ponywolf.joykey" ).start()
+function spawnWorld()
 
--- add virtual joysticks to mobile 
-system.activate("multitouch")
-if isMobile or isSimulator then
-	local vjoy = require( "com.ponywolf.vjoy" )
-	local stick = vjoy.newStick()
-	stick.x, stick.y = 128, display.contentHeight - 128
-	local button = vjoy.newButton()
-	button.x, button.y = display.contentWidth - 128, display.contentHeight - 128
 end
-
--- reserve music channel
-audio.reserveChannels(1)
-
--- go to menu screen
-composer.gotoScene( "scene.menu", { params={ } } )
-
--- Or, instead of the line above, you can cheat skip to a specific level by using the
--- following line, passing to it the JSON file of the level you want to jump to
--- composer.gotoScene( "scene.game", { params={ map="scene/game/map/sandbox2.json" } } )
+createPlayScreen()
