@@ -1,9 +1,8 @@
 display.setStatusBar(display.HiddenStatusBar)
 
+-- generelle Variablen festlegen
 local centerX = display.contentCenterX
 local centerY = display.contentCenterY
-
--- generelle Variablen festlegen
 local gameTitle
 local scoreTxt
 -- Audio Files
@@ -12,12 +11,12 @@ local scoreTxt
 -- Startbildschirm
 
 local function createPlayScreen()													
-	local background = display.newImage("background.jpg")	
+	local background = display.newImage("images/background.jpg")	
 	background:scale(0.5, 0.5)
 	background.y = centerY			
 	background.alpha = 0		 
 	
-	character = display.newImage("man.png")
+	character = display.newImage("images/man.png")
 	character:scale(1, 1)		--evt. verübergehend
 	character.x = centerX
 	character.y = display.contentHeight + 60
@@ -26,7 +25,7 @@ local function createPlayScreen()
 	transition.to( background, { time=2000, alpha=1,  y=centerY, x=centerX } )		
 	
 	local function showTitle()
-		gameTitle = display.newImage("gametitle.png")
+		gameTitle = display.newImage("images/gametitle.png")
 		gameTitle.alpha = 0
 		gameTitle:scale(4, 4)
 		transition.to( gameTitle, {time=500, alpha=1, xScale=1, yScale=1, y=centerY-125, x=centerX} )
