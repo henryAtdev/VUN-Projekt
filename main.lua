@@ -3,13 +3,13 @@ display.setStatusBar(display.HiddenStatusBar)
 local centerX = display.contentCenterX
 local centerY = display.contentCenterY
 
--- set up forward references
+-- generelle Variablen festlegen
 local gameTitle
 local scoreTxt
--- preload audio
+-- Audio Files
 
 
--- create play screen
+-- Startbildschirm
 
 local function createPlayScreen()													
 	local background = display.newImage("background.jpg")	
@@ -35,13 +35,13 @@ local function createPlayScreen()
 	transition.to( character, { time=2000, alpha=1, y=centerY+77, x=centerX+25, onComplete=showTitle, xScale=0.25, yScale=0.25 } ) 
 	end	
 
--- game functions
+-- spiel Starten(Startbildschirm zurücksetzen)
 function startGame()
-	local text = display.newText( "Hier tippen zum starten. Beantworte die Fragen!", 0, 0, "Helvetica", 25 )			--Text anzeigen lassen
-	text.x = centerX																						--wo im Bildschirm anzeigen lassen? 
+	local text = display.newText( "Hier tippen zum starten. Beantworte die Fragen!", 0, 0, "Helvetica", 25 )
+	text.x = centerX
 	text.y = display.contentHeight - 30
-	text:setTextColor(1, 1, 1)																			--farbe für text 
-	local function goAway(event)																			--funktion um "vorbereitungs screen" wegzuzmachen und zu beginnen
+	text:setTextColor(1, 1, 1)
+	local function goAway(event)
 		display.remove(event.target)
 		display.remove(character)
 		display.remove(background)
@@ -51,6 +51,7 @@ function startGame()
 	text:addEventListener ( "tap", goAway )
 end
 
+--Lvl starten
 function spawnWorld()
 
 end
