@@ -5,6 +5,8 @@ local composer = require( "composer" )
 -- Grundeinstellungen
 display.setStatusBar(display.HiddenStatusBar)
 system.activate("multitouch")
+local isSimulator = "simulator" == system.getInfo( "environment" )
+local isMobile = ( "ios" == system.getInfo("platform") ) or ( "android" == system.getInfo("platform") )
 
 -- generelle Variablen festlegen
 local centerX = display.contentCenterX
@@ -54,6 +56,16 @@ function startGame()
 		spawnWorld()
 	end
 	text:addEventListener ( "tap", goAway )
+
+	require( "Joysticksumwandeln" ).start()
+	
+	if isMobile or isSimulator then
+		local vjoy = require( "Joysticks" )
+		local stick = vjoy.newStick()
+		stick.x, stick.y = 128, display.contentHeight - 128
+		local button = vjoy.newButton()
+		button.x, button.y = display.contentWidth - 128, display.contentHeight - 128
+	end
 end
 
 --Lvl starten
