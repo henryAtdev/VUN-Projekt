@@ -1,4 +1,10 @@
+
+-- Bibliotheken hinzufügen
+local composer = require( "composer" )
+
+-- Grundeinstellungen
 display.setStatusBar(display.HiddenStatusBar)
+system.activate("multitouch")
 
 -- generelle Variablen festlegen
 local centerX = display.contentCenterX
