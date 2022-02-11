@@ -24,4 +24,4 @@ end
 audio.reserveChannels(1)
 
 --Menu öffnen
-composer.gotoScene( "scene.menu" )
+composer.gotoScene( "menu" )
