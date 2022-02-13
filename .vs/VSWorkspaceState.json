@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images"
+    "\\com\\ponywolf",
+    "\\scene\\game",
+    "\\scene\\menu",
+    "\\scene\\menu\\ui"
   ],
-  "SelectedNode": "\\menu.lua",
   "PreviewInSolutionExplorer": false
 }

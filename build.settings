@@ -1,21 +1,17 @@
 --
--- For more information on build.settings, see the Project Build Settings guide at:
--- https://docs.coronalabs.com/guide/distribution/buildSettings
+-- For more information on build.settings, see the Project Build Settings guide:
+-- http://docs.coronalabs.com/guide/distribution/buildSettings/index.html
 --
 
-settings =
-{
-	orientation =
-	{
-		-- Supported values for orientation:
-		-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+settings = {
+
+	-- Use the "orientation" table to set the default and supported device orientations
+	-- Acceptable values are "portrait", "portraitUpsideDown", "landscapeRight", or "landscapeLeft"
+	orientation = {
 		default = "landscapeRight",
-		supported = { "landscapeRight", },
+		supported = { "landscapeRight" }
 	},
 
-	--
-	-- Android section
-	--
 	android =
 	{
 		usesPermissions =
@@ -23,35 +19,38 @@ settings =
 			"android.permission.INTERNET",
 		},
 	},
-
-	--
-	-- iOS section
-	--
+    
 	iphone =
 	{
 		xcassets = "Images.xcassets",
 		plist =
 		{
-			UIStatusBarHidden = false,
 			UILaunchStoryboardName = "LaunchScreen",
+			ITSAppUsesNonExemptEncryption = false, -- This sample doesn't use custom encryption
 		},
 	},
 
-	--
-	-- Plugins section
-	--
+	-- This setting can be used to turned on to disable debug symbol stripping altogether
+	build = {
+		--neverStripDebugInfo = true
+	},
+
+	window = {
+		titleText = {
+			-- The "default" text will be used if the system is using a language and/or
+			-- country code not defined. This serves as a fallback mechanism.
+			default = "Sticker Knight",
+		},
+	},
+
 	plugins =
 	{
 
 	},
 
-	--
-	-- Project section
-	--
-	excludeFiles =
-	{
-		-- Exclude unnecessary files for each platform
-		all = { "Icon.png", "Icon-*dpi.png", "Images.xcassets", },
-		android = { "LaunchScreen.storyboardc", },
+	--  Files to be excluded are specified per-platform (iOS, Android, or all) using simple pattern
+	--  matching where * means any string of characters, sometimes including /.
+	excludeFiles = {
+
 	},
 }
