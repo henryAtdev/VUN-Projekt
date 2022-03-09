@@ -58,7 +58,7 @@ function M.new( instance, options )
 				instance:jump()
 			end
 			if not ( left == 0 and right == 0 ) and not instance.jumping then
-				instance:setSequence( "walk" )
+				instance:setSequence( "walk" ) -- zustand auf dem Bildschirm  
 				instance:play()
 			end
 		elseif phase == "up" then
@@ -85,7 +85,7 @@ function M.new( instance, options )
 		if self.shield:damage() <= 0 then
 			-- We died
 			fx.fadeOut( function()
-				composer.gotoScene( "scene.refresh", { params = { map = self.filename } } )
+				composer.gotoScene( "scene.refresh", { params = { map = self.filename } } ) -- spiel startet neu 
 			end, 1500, 1000 )
 			instance.isDead = true
 			instance.isSensor = true

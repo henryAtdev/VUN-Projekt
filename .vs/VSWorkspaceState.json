@@ -1,10 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\com\\ponywolf",
+    "\\scene",
     "\\scene\\game",
+    "\\scene\\game\\lib",
     "\\scene\\menu",
     "\\scene\\menu\\ui"
   ],
+  "SelectedNode": "\\scene",
   "PreviewInSolutionExplorer": false
 }
