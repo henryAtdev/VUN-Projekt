@@ -13,7 +13,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":1736,
                  "x":-256,
                  "y":920.666666666667
@@ -25,14 +25,14 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":1216,
                  "x":122,
                  "y":810
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":true, 
          "width":38,
          "x":0,
          "y":0
@@ -49,7 +49,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":184,
                  "x":640,
                  "y":320
@@ -61,7 +61,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":184,
                  "x":336,
                  "y":144
@@ -73,7 +73,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":192,
                  "x":1024,
                  "y":145
@@ -85,7 +85,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":184,
                  "x":44,
                  "y":136
@@ -97,7 +97,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":true,
+                 "visible":true, 
                  "width":954,
                  "x":-226,
                  "y":768
@@ -140,7 +140,7 @@
                 }],
          "opacity":0.490000009536743,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false, // normal true, ist das drehen der Lichtstreifen
          "width":38,
          "x":0,
          "y":0
