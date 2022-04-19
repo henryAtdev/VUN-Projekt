@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images"
+    "\\scene",
+    "\\scene\\game",
+    "\\scene\\game\\lib",
+    "\\scene\\menu",
+    "\\scene\\menu\\ui"
   ],
-  "SelectedNode": "\\menu.lua",
+  "SelectedNode": "\\scene\\menu\\ui\\title.png",
   "PreviewInSolutionExplorer": false
 }
