@@ -4,9 +4,8 @@
     "\\scene",
     "\\scene\\game",
     "\\scene\\game\\lib",
-    "\\scene\\menu",
-    "\\scene\\menu\\ui"
+    "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\menu\\ui\\title.png",
+  "SelectedNode": "\\scene\\game.lua",
   "PreviewInSolutionExplorer": false
 }
