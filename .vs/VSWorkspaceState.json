@@ -6,6 +6,6 @@
     "\\scene\\game\\lib",
     "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\template.lua",
+  "SelectedNode": "\\scene\\game.lua",
   "PreviewInSolutionExplorer": false
 }
