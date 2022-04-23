@@ -17,19 +17,12 @@ local myText1 = display.newText( myString1, display.contentCenterX, display.cont
 local myText2 = display.newText( myString2, display.contentCenterX, display.contentCenterY, 1000,  300, native.systemFont, 30 )
 local myText3 = display.newText( myString3, display.contentCenterX, display.contentCenterY, 1000, 0, native.systemFont, 30 )
 
-function myText3:tap(event)
-        fx.fadeOut( function()
-                composer.gotoScene( "scene.menu")
-            end )
-    end
-    myText3:addEventListener("tap")
+function test(event)
+	composer.gotoScene( "scene.menu")
+end
+    myText3:addEventListener( "tap", test )
 
-function myText2:tap(event)
-	transition.to( myText1 { time=2000, alpha=0 } )
-	end
-	myText2:addEventListener("tap")
-	
-	
+
 	local phase = event.phase
 	local options = { params = event.params }
 	if ( phase == "will" ) then
