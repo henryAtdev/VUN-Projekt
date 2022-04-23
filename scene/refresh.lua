@@ -19,8 +19,18 @@ local myText3 = display.newText( myString3, display.contentCenterX, display.cont
 
 function test(event)
 	composer.gotoScene( "scene.menu")
+	transition.to( myText1, { time=1000, alpha=0 } )
+	transition.to( myText2, { time=1000, alpha=0 } )
+	transition.to( myText3, { time=1000, alpha=0 } )
 end
     myText3:addEventListener( "tap", test )
+
+function test2(event)
+	transition.to( myText1, { time=2000, alpha=0,  y=centerY, x=centerX } )
+	transition.to( myText2, { time=2000, alpha=0,  y=centerY, x=centerX } )
+	transition.to( myText3, { time=2000, alpha=0,  y=centerY, x=centerX } )
+end
+	myText2:addEventListener( "tap", test2)
 
 
 	local phase = event.phase
