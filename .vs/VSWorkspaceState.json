@@ -4,8 +4,8 @@
     "\\scene",
     "\\scene\\game",
     "\\scene\\game\\lib",
-    "\\scene\\menu"
+    "\\scene\\game\\map"
   ],
-  "SelectedNode": "\\scene\\refresh.lua",
+  "SelectedNode": "\\scene\\game\\map\\sandbox.json",
   "PreviewInSolutionExplorer": false
 }
