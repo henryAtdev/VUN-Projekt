@@ -3,9 +3,8 @@
     "",
     "\\scene",
     "\\scene\\game",
-    "\\scene\\game\\lib",
-    "\\scene\\game\\map"
+    "\\scene\\game\\lib"
   ],
-  "SelectedNode": "\\scene\\game\\map\\sandbox.json",
+  "SelectedNode": "\\scene\\game\\map",
   "PreviewInSolutionExplorer": false
 }
