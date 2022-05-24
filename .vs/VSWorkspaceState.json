@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\scene",
-    "\\scene\\game",
-    "\\scene\\game\\lib"
+    "\\scene\\game"
   ],
   "SelectedNode": "\\scene\\game\\map",
   "PreviewInSolutionExplorer": false

@@ -1,0 +1,29 @@
+[
+  {
+    "question": "Was ist die allgemeine Formel fuer F?",
+    "answers": [
+      {
+        "value": "F= m*a",
+        "valid": false
+      },
+      {
+        "value": "F= m*v",
+        "valid": true
+      }
+    ]
+  },
+  {
+    "question": "Was ist die allgemeine Formel fuer v?",
+    "answers": [
+      {
+        "value": "v= s/t",
+        "valid": true
+      },
+      {
+        "value": "v= s*t",
+        "valid": false
+      }
+    ]
+  }
+
+]
