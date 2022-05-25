@@ -4,11 +4,11 @@
     "answers": [
       {
         "value": "F= m*a",
-        "valid": false
+        "valid": true
       },
       {
         "value": "F= m*v",
-        "valid": true
+        "valid": false
       }
     ]
   },
@@ -21,6 +21,86 @@
       },
       {
         "value": "v= s*t",
+        "valid": false
+      }
+    ]
+  },
+
+  {
+    "question": "Was ist eine Formel für die beschleunigte Bewegung?",
+    "answers": [
+      {
+        "value": "v= 1/2*a*t",
+        "valid": false
+      },
+      {
+        "value": "v= a*t",
+        "valid": true
+      }
+    ]
+  },
+  {
+    "question": "Was ist eine Formel für I?",
+    "answers": [
+      {
+        "value": "I= U/R",
+        "valid": true
+      },
+      {
+        "value": "I= R/U",
+        "valid": false
+      }
+    ]
+  },
+  {
+    "question": "Was ist eine Formel für E?",
+    "answers": [
+      {
+        "value": "E= U/D",
+        "valid": true
+      },
+      {
+        "value": "E= Q/F",
+        "valid": false
+      }
+    ]
+  },
+  {
+    "question": "Was ist die Formel für die kinetische Energie?",
+    "answers": [
+      {
+        "value": "W= 1/2*m*v*v",
+        "valid": true
+      },
+      {
+        "value": "W= s*t*a",
+        "valid": false
+      }
+    ]
+  },
+
+  {
+    "question": "Was ist eine Formel für C?",
+    "answers": [
+      {
+        "value": "C= Q/U",
+        "valid": true
+      },
+      {
+        "value": "C= U/Q",
+        "valid": false
+      }
+    ]
+  },
+  {
+    "question": "Was ist eine Formel für f?",
+    "answers": [
+      {
+        "value": "f= 1/T",
+        "valid": true
+      },
+      {
+        "value": "f= T/1",
         "valid": false
       }
     ]

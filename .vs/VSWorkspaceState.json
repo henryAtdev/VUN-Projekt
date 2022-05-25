@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\com",
     "\\scene",
-    "\\scene\\game"
+    "\\scene\\game",
+    "\\scene\\game\\map",
+    "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\game\\map",
+  "SelectedNode": "\\scene\\game\\map\\questions.json",
   "PreviewInSolutionExplorer": false
 }
