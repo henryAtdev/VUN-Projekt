@@ -4,9 +4,9 @@
     "\\com",
     "\\scene",
     "\\scene\\game",
-    "\\scene\\game\\map",
+    "\\scene\\game\\lib",
     "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\game\\map\\questions.json",
+  "SelectedNode": "\\scene",
   "PreviewInSolutionExplorer": false
 }
