@@ -42,10 +42,22 @@ local prevScene = composer.getSceneName( "previous" )
 
 
 local questionMapData = readJSONFromFile( "config/questions.json", system.ResourceDirectory )
+--print( json.encode( questionMapData ) ) 
+print(#questionMapData )
+
+math.randomseed(os.time()) -- random initialize
+math.random(); math.random(); math.random() -- warming up
+
+local rndNumber = math.random( 1, #questionMapData)
 
 
-local rndQuestion = questionMapData[0]
+
+print ( rndNumber )
+print( math.random( 1, #questionMapData) )
+
+local rndQuestion = questionMapData[ rndNumber ]
 print( json.encode( rndQuestion ) ) 
+
 
 -- Create a new Composer scene
 local scene = composer.newScene()
@@ -53,8 +65,8 @@ local scene = composer.newScene()
 function scene:show( event )
 
 local question = rndQuestion.question
-local answer1 = rndQuestion.answers[0].value
-local answer2 = rndQuestion.answers[1].value
+local answer1 = rndQuestion.answers[1].value
+local answer2 = rndQuestion.answers[2].value
 
 local myText1 = display.newText( json.encode( question ), display.contentCenterX, display.contentCenterY, 1000, 600, native.systemFont, 50 )
 local myText2 = display.newText( json.encode( answer1 ), display.contentCenterX, display.contentCenterY, 1000,  300, native.systemFont, 30 )
