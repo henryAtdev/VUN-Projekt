@@ -40,29 +40,28 @@ end
 -- Variables local to scene
 local prevScene = composer.getSceneName( "previous" )
 
+-- Create a new Composer scene
+local scene = composer.newScene()
+
+function scene:show( event )
 
 local questionMapData = readJSONFromFile( "config/questions.json", system.ResourceDirectory )
 --print( json.encode( questionMapData ) ) 
 print(#questionMapData )
 
+
+--ToDo: Rest screen after every level
+
 math.randomseed(os.time()) -- random initialize
 math.random(); math.random(); math.random() -- warming up
 
 local rndNumber = math.random( 1, #questionMapData)
-
-
-
 print ( rndNumber )
 print( math.random( 1, #questionMapData) )
 
 local rndQuestion = questionMapData[ rndNumber ]
-print( json.encode( rndQuestion ) ) 
+print( json.encode( rndQuestion ) )
 
-
--- Create a new Composer scene
-local scene = composer.newScene()
-
-function scene:show( event )
 
 local question = rndQuestion.question
 local answer1 = rndQuestion.answers[1].value
