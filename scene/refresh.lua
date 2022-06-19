@@ -51,6 +51,7 @@ print(#questionMapData )
 
 
 --ToDo: Rest screen after every level
+--ToDo: create function which determines the correct and invalid question
 
 math.randomseed(os.time()) -- random initialize
 math.random(); math.random(); math.random() -- warming up
