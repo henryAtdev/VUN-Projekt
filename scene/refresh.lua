@@ -1,5 +1,41 @@
 -- Include modules/libraries
+-- package.path = package.path .. ";../lib/?.lua"
+-- local lunajson = require("lunajson")
+
 local composer = require( "composer" )
+local json = require( "json" )  -- Include the Corona JSON library
+
+
+-- https://docs.coronalabs.com/tutorial/data/jsonSaveLoad/index.html
+function readJSONFromFile( filename, location )
+ 
+    local loc = location
+    if not location then
+        loc = system.ResourceDirectory
+    end
+ 
+    -- Path for the file to read
+    local path = system.pathForFile( filename, loc )
+ 
+    -- Open the file handle
+    local file, errorString = io.open( path, "r" )
+ 
+    if not file then
+        -- Error occurred; output the cause
+        print( "File error: " .. errorString )
+    else
+        -- Read data from file
+        local contents = file:read( "*a" )
+        -- Decode JSON data into Lua table
+        local t = json.decode( contents )
+        -- Close the file handle
+        io.close( file )
+        -- Return table
+        return t
+    end
+end
+
+
 
 -- Variables local to scene
 local prevScene = composer.getSceneName( "previous" )
@@ -9,13 +45,32 @@ local scene = composer.newScene()
 
 function scene:show( event )
 
-local myString1 = "Was ist die allgemeine Formel fuer F"
-local myString2 = "F= m*a"
-local myString3 = "F= m*v"
+local questionMapData = readJSONFromFile( "config/questions.json", system.ResourceDirectory )
+--print( json.encode( questionMapData ) ) 
+print(#questionMapData )
 
-local myText1 = display.newText( myString1, display.contentCenterX, display.contentCenterY, 1000, 600, native.systemFont, 50 )
-local myText2 = display.newText( myString2, display.contentCenterX, display.contentCenterY, 1000,  300, native.systemFont, 30 )
-local myText3 = display.newText( myString3, display.contentCenterX, display.contentCenterY, 1000, 0, native.systemFont, 30 )
+
+--ToDo: Rest screen after every level
+--ToDo: create function which determines the correct and invalid question
+
+math.randomseed(os.time()) -- random initialize
+math.random(); math.random(); math.random() -- warming up
+
+local rndNumber = math.random( 1, #questionMapData)
+print ( rndNumber )
+print( math.random( 1, #questionMapData) )
+
+local rndQuestion = questionMapData[ rndNumber ]
+print( json.encode( rndQuestion ) )
+
+
+local question = rndQuestion.question
+local answer1 = rndQuestion.answers[1].value
+local answer2 = rndQuestion.answers[2].value
+
+local myText1 = display.newText( json.encode( question ), display.contentCenterX, display.contentCenterY, 1000, 600, native.systemFont, 50 )
+local myText2 = display.newText( json.encode( answer1 ), display.contentCenterX, display.contentCenterY, 1000,  300, native.systemFont, 30 )
+local myText3 = display.newText( json.encode(answer2 ), display.contentCenterX, display.contentCenterY, 1000, 0, native.systemFont, 30 )
 
 function test(event)
 	composer.gotoScene( "scene.menu")
