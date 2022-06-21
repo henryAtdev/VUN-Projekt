@@ -8,6 +8,6 @@
     "\\scene\\game\\map",
     "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\game\\lib\\exit.lua",
+  "SelectedNode": "\\scene\\menu\\font",
   "PreviewInSolutionExplorer": false
 }
