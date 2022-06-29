@@ -2,12 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\com",
+    "\\config",
     "\\scene",
     "\\scene\\game",
     "\\scene\\game\\lib",
-    "\\scene\\game\\map",
     "\\scene\\menu"
   ],
-  "SelectedNode": "\\scene\\menu\\font",
+  "SelectedNode": "\\config\\questions.json",
   "PreviewInSolutionExplorer": false
 }

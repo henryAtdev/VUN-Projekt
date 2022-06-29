@@ -27,7 +27,7 @@
   },
 
   {
-    "question": "Was ist eine Formel für die beschleunigte Bewegung?",
+    "question": "Was ist eine Formel fuer die beschleunigte Bewegung?",
     "answers": [
       {
         "value": "v= 1/2*a*t",
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "question": "Was ist eine Formel für I?",
+    "question": "Was ist eine Formel fuer I?",
     "answers": [
       {
         "value": "I= U/R",
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "question": "Was ist eine Formel für E?",
+    "question": "Was ist eine Formel fuer E?",
     "answers": [
       {
         "value": "E= U/D",
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "question": "Was ist die Formel für die kinetische Energie?",
+    "question": "Was ist die Formel fuer die kinetische Energie?",
     "answers": [
       {
         "value": "W= 1/2*m*v*v",
@@ -80,7 +80,7 @@
   },
 
   {
-    "question": "Was ist eine Formel für C?",
+    "question": "Was ist eine Formel fuer C?",
     "answers": [
       {
         "value": "C= Q/U",
@@ -93,7 +93,7 @@
     ]
   },
   {
-    "question": "Was ist eine Formel für f?",
+    "question": "Was ist eine Formel fuer f?",
     "answers": [
       {
         "value": "f= 1/T",
